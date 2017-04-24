@@ -25,7 +25,7 @@ class Grafo:
 		return args
 
 	def iterarSobreAdyacentes(self, nodo, funcion, args):
-		for adyacente in range(len(self.adyacencias[nodo])):
+		for adyacente in self.adyacencias[nodo]:
 			args = funcion(adyacente, args)
 		return args
 
