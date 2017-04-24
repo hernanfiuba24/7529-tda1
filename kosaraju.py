@@ -4,29 +4,17 @@ from time import time
 class Kosaraju(object):
 
 	def __init__(self, path):
-		inicioLeida = time()
 		graph = createGraph(path, True)
-		finLeida = time()
-		print "Lei el grafo original en", finLeida - inicioLeida, "segundos"
-		inicioLeida = time()
 		transposeGraph = createTransposeGraph(path, True)
-		finLeida = time()
-		print "Lei el grafo transpuesto en", finLeida - inicioLeida, "segundos"
 		visitados = [False for i in range(graph.cantidadVertices())]
 		L = []
-		inicioDFS = time()
 		args = graph.iterarSobreNodos(self.__visitar, [graph.iterarSobreAdyacentes, visitados, L])
-		finDFS = time()
-		print "Termine el primer DFS en", finDFS - inicioDFS, "segundos"
 		visitados = args[1]
 		L = args[2]	
 		asignaciones = {}
 		visitados = [False for i in range(graph.cantidadVertices())]
-		inicioDFS = time()
 		for nodo in L:
 			args = self.__asignar(nodo, [asignaciones, visitados, transposeGraph.iterarSobreAdyacentes, nodo])
-		finDFS = time()
-		print "Termine el segundo DFS en", finDFS - inicioDFS, "segundos"
 		self.componentesConexas = asignaciones.values()
 
 	def getCantidadSCC(self):
