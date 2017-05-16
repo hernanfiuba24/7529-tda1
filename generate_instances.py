@@ -39,6 +39,37 @@ def generateNlinesOfMValuesRamdonAndSave(n, m, f, minRandom, maxRandom, bunchsiz
             print "line : " + str(i)
         i += 1
 
+
+def generateVacantInHospitals(n, m, f):
+    allow_hospitales = list(range(m))
+    hospitals_vacants = [0] * m
+    vancants = 0
+    hospital_vancants = 0
+    for i in xrange(m):
+        hospital = random.choice(allow_hospitales)
+        allow_hospitales.remove(hospital)
+        in_range = n > vancants
+        is_final = i == m
+        if(is_final):
+            if(in_range):
+                print "final in range"
+                hospital_vancants = m - hospital_vancants
+            else:
+                print "final out of range"
+                hospital_vancants = 0
+        elif(in_range):
+            print "In range"
+            hospital_vancants = random.randint(0, m - vancants)
+        else:
+            print "Out of range"
+            hospital_vancants = 0    
+        print "hospital", hospital, "have", hospital_vancants ,"vacants"
+        hospitals_vacants[hospital] = str(hospital_vancants)
+        vancants += hospital_vancants
+    print hospitals_vacants
+    f.writelines(' '.join(hospitals_vacants) + "\n")
+
+
 if __name__ == "__main__":
 
     FORMAT = '%H:%M:%S'
@@ -58,10 +89,10 @@ if __name__ == "__main__":
     maxHospitals = paramenters['m']
 
     f.write(str(maxAlumnos) + "\n")
-    generateNlinesOfMValuesRamdonAndSave(maxAlumnos, maxHospitals, f, 0, maxHospitals-1, 1000)
+    generateNlinesOfMValuesRamdonAndSave(maxAlumnos, maxHospitals, f, 0, maxHospitals-1, 10)
     f.write(str(maxHospitals) + "\n")
-    generateNlinesOfMValuesRamdonAndSave(maxHospitals, maxAlumnos, f, 0, maxAlumnos-1, 1000)
-    generateNlinesOfMValuesRamdonAndSave(1, maxHospitals, f, 1, 1, 1)
+    generateNlinesOfMValuesRamdonAndSave(maxHospitals, maxAlumnos, f, 0, maxAlumnos-1, 10)
+    generateVacantInHospitals(maxHospitals, maxAlumnos, f)
 
     f.close()
     print "\nThe file " + path + " was created ok"
