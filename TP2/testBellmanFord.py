@@ -27,47 +27,59 @@ def run():
 	test("3->3 = 0", bf.getDistanciaTo(3), 0)
 
 def timeTests():
-	generateInstance("testBF10000.txt", 10000)
-	graph = createGraph("testBF10000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF100.txt", 100)
+	graph = createGraph("testBF100.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 10000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 100 aristas: %f" %(fin - inicio)
 
-	generateInstance("testBF20000.txt", 20000)
-	graph = createGraph("testBF20000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF200.txt", 200)
+	graph = createGraph("testBF200.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 20000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 200 aristas: %f" %(fin - inicio)
 
-	generateInstance("testBF30000.txt", 30000)
-	graph = createGraph("testBF30000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF300.txt", 300)
+	graph = createGraph("testBF300.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 30000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 300 aristas: %f" %(fin - inicio)
 
-	generateInstance("testBF40000.txt", 40000)
-	graph = createGraph("testBF40000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF400.txt", 400)
+	graph = createGraph("testBF400.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 40000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 400 aristas: %f" %(fin - inicio)
 
-	generateInstance("testBF50000.txt", 50000)
-	graph = createGraph("testBF50000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF500.txt", 500)
+	graph = createGraph("testBF500.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 50000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 500 aristas: %f" %(fin - inicio)
 
-	generateInstance("testBF100000.txt", 100000)
-	graph = createGraph("testBF100000.txt", True)
+	print "Creo el archivo y el grafo"
+	generateInstance("testBF1000.txt", 1000)
+	graph = createGraph("testBF1000.txt", True)
+	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
 	bf = BellmanFord(graph, 0)
 	fin = time()
-	print "Tiempo de ejecucion 100000 aristas: %f" %(fin - inicio)
+	print "Tiempo de ejecucion 1000 aristas: %f" %(fin - inicio)
 
 run()
 timeTests()
