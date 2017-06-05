@@ -23,60 +23,60 @@ def run():
 	test("3->2 = 7", fw.getDistancia(3, 2), 7)
 	test("3->3 = 0", fw.getDistancia(3, 3), 0)
 
-"""def timeTests():
+def timeTests():
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF100.txt", 100)
-	graph = createGraph("testBF100.txt", True)
+	generateInstance("testFW100.txt", 100)
+	graph = createGraph("testFW100.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
 	print "Tiempo de ejecucion 100 aristas: %f" %(fin - inicio)
 
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF200.txt", 200)
-	graph = createGraph("testBF200.txt", True)
+	generateInstance("testFW200.txt", 200)
+	graph = createGraph("testFW200.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
 	print "Tiempo de ejecucion 200 aristas: %f" %(fin - inicio)
 
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF300.txt", 300)
-	graph = createGraph("testBF300.txt", True)
+	generateInstance("testFW300.txt", 300)
+	graph = createGraph("testFW300.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
 	print "Tiempo de ejecucion 300 aristas: %f" %(fin - inicio)
-
+	
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF400.txt", 400)
-	graph = createGraph("testBF400.txt", True)
+	generateInstance("testFW400.txt", 400)
+	graph = createGraph("testFW400.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
 	print "Tiempo de ejecucion 400 aristas: %f" %(fin - inicio)
-
+	
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF500.txt", 500)
-	graph = createGraph("testBF500.txt", True)
+	generateInstance("testFW500.txt", 500)
+	graph = createGraph("testFW500.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
 	print "Tiempo de ejecucion 500 aristas: %f" %(fin - inicio)
-
+	
 	print "Creo el archivo y el grafo"
-	generateInstance("testBF1000.txt", 1000)
-	graph = createGraph("testBF1000.txt", True)
+	generateInstance("testFW1000.txt", 1000)
+	graph = createGraph("testFW1000.txt", True)
 	print "Creo el archivo y el grafo -- DONE"
 	inicio = time()
-	bf = BellmanFord(graph, 0)
+	fw = FloydWarshall(graph)
 	fin = time()
-	print "Tiempo de ejecucion 1000 aristas: %f" %(fin - inicio)"""
+	print "Tiempo de ejecucion 1000 aristas: %f" %(fin - inicio)
 
 run()
-#timeTests()
+timeTests()
