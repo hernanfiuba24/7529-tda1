@@ -1,7 +1,7 @@
 #Configuracion Entrega
 ARCHIVOS=*.py 	#Tipos de archivos que se van a agregar
 CUATRIMESTRE=2017-1C
-ENTREGA=TP3
+ENTREGA=TP1
 ENCODING=ISO-8859-1
 OUTPUTFILE=out.ps 		 	#archivo intermedio
 FORMATO=portrait 			#portrait o landscape (vertical u horizontal)
