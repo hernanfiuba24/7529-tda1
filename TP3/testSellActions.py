@@ -10,7 +10,14 @@ def run():
     test("Day to sell =  7", sa.dateToSell, 7)
     test("The benefit is =  100", sa.benefits[len(sa.benefits)-1], 100)
 
+    sa = SellActions("test2.txt")
+    sa.findTheDaysToBuyAndSellAcctions()
+    test("Day to buy  =  1", sa.dateToBuyActual, 1)
+    test("Day to sell =  2", sa.dateToSell, 2)
+    test("The benefit is =  4", sa.benefits[len(sa.benefits)-1], 4)
+
 def timeTests():
+    """
     print "Generate instances to buying and selling"
     generateInstance("testSA100.txt", 100)
     print "Find the optimal days to buying and selling"
@@ -64,6 +71,6 @@ def timeTests():
     sa.findTheDaysToBuyAndSellAcctions()
     fin = time()
     print "Execution time with 10000000 days: %f" %(fin - inicio)
-
+"""
 run()
 timeTests()

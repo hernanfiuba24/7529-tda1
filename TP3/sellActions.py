@@ -14,9 +14,14 @@ class SellActions(object):
         self.benefits = [None] * self.days
 
     def initialize(self):
-        self.dateToBuyActual = 0
-        self.dateToSell = 0
-        self.benefits[0] = 0
+        if (self.valueActions[0]<self.valueActions[1]):
+            self.dateToBuyActual = 0
+            self.dateToSell = 1
+        else:            
+            self.dateToBuyActual = 1
+            self.dateToSell = 1
+        self.benefits[0] = 0 
+        self.benefits[1] = self.dateToBuyActual - self.dateToSell
 
     def setValueAction(self, day, value):
         self.valueActions[day] = value
@@ -51,10 +56,10 @@ class SellActions(object):
         for self.day in xrange(0, self.days):
             value = int(file.readline())
             self.setValueAction(self.day, value)
-            if (self.day > 0):
-                self.setBenefit(self.day)
-            else:
+            if (self.day == 1):
                 self.initialize()
+            elif (self.day > 1):
+                self.setBenefit(self.day)
         file.close()
         print "Day to buy is " + str(self.dateToBuyActual)
         print "Day to sell is " + str(self.dateToSell)
